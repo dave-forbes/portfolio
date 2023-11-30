@@ -2,41 +2,44 @@
 
 @media (prefers-color-scheme: light) {
   :root {
-    --text: #002414;
-    --background: #fafffd;
-    --primary: #01959d;
-    --secondary: #9ac7fe;
-    --accent: #015ccb;
+    --text: #030607;
+    --background: #f4f8fb;
+    --primary: #d38d5f;
+    --secondary: #a2cdeb;
+    --accent: #b98b0e;
   }
 }
-
 @media (prefers-color-scheme: dark) {
   :root {
-    --text: #dbffef;
-    --background: #000503;
-    --primary: #62f6fe;
-    --secondary: #012e65;
-    --accent: #348ffe;
+    --text: #f8fbfc;
+    --background: #04080b;
+    --primary: #a05a2c;
+    --secondary: #143e5d;
+    --accent: #f1c346;
   }
 }
 
 :root[data-theme="light"] {
-  --text: #002414;
-  --background: #fafffd;
-  --primary: #01959d;
-  --secondary: #9ac7fe;
-  --accent: #015ccb;
+  --text: #030607;
+  --background: #f4f8fb;
+  --primary: #d38d5f;
+  --secondary: #a2cdeb;
+  --accent: #b98b0e;
 }
 :root[data-theme="dark"] {
-  --text: #dbffef;
-  --background: #000503;
-  --primary: #62f6fe;
-  --secondary: #012e65;
-  --accent: #348ffe;
+  --text: #f8fbfc;
+  --background: #04080b;
+  --primary: #a05a2c;
+  --secondary: #143e5d;
+  --accent: #f1c346;
 }
 
 :root {
   scroll-behavior: smooth;
+}
+
+svg:hover {
+  fill: var(--text);
 }
 
 body {
@@ -123,7 +126,7 @@ small {
   position: absolute;
   z-index: 2;
   border-radius: 50%;
-  transition: transform 0.3s;
+  transition: transform 0.5s;
 }
 
 .toggle-move {
@@ -261,9 +264,8 @@ header>ul {
   }
 }
 
-.about,
-.contact {
-  height: 50vw;
+.about {
+  padding: 10rem 0;
 }
 
 .about {
@@ -323,6 +325,7 @@ img {
 svg {
   width: 50px;
   height: 50px;
+  transition: 0.3s;
 }
 
 .projects-container {
@@ -356,4 +359,57 @@ svg {
 
 .hide {
   opacity: 0 !important;
+}
+
+@media (max-width: 500px) {
+  .circle {
+    width: 250px;
+    height: 250px;
+  }
+
+  .circle h1 {
+    font-size: 2.2rem;
+  }
+
+  .circle p {
+    font-size: 0.8rem;
+  }
+
+  .circle svg {
+    width: 40px;
+    height: 40px;
+  }
+
+  .down-arrow {
+    top: calc(100vh - 5rem);
+  }
+
+  .down-arrow::after {
+    width: 2rem;
+    height: 2rem;
+  }
+
+  .about{
+    display: block;
+  }
+
+  .about-container {
+    display: block;
+  }
+
+  .projects-container {
+    grid-template-columns: 1fr;
+  }
+
+  .images-div {
+    margin: 0 auto;
+  }
+
+  body {
+    padding-inline: 1rem;
+  }
+
+  .progress-container {
+    left: -0.3rem;
+  }
 }
