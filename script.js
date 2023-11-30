@@ -1,6 +1,5 @@
 function circleMove() {
   const circle = document.querySelector(".circle");
-  const circleContainer = document.querySelector(".circle-container");
   // const randomX = Math.floor(Math.random() * circleContainer.clientWidth);
   // const randomY = Math.floor(Math.random() * circleContainer.clientHeight);
   // const circleInfo = circle.getBoundingClientRect();
