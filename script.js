@@ -2,20 +2,22 @@ const circle = document.querySelector(".circle");
 
 function circleMove() {
   translateX =
-    Math.floor((Math.random() * window.innerWidth) / 4) - window.innerWidth / 8;
+    Math.floor((Math.random() * window.innerWidth) / 5) -
+    window.innerWidth / 10;
   translateY =
-    Math.floor((Math.random() * window.innerHeight) / 4) -
-    window.innerHeight / 8;
-  console.log({ translateX, translateY });
+    Math.floor((Math.random() * window.innerHeight) / 5) -
+    window.innerHeight / 10;
   circle.style.cssText = `transform: translate(${translateX}px, ${translateY}px)`;
 }
 
-let circleMoveInterval = setInterval(circleMove, 10000);
-
-circle.addEventListener("mouseover", () => {
+function slowCircle() {
   circle.style.cssText =
-    "transform: translate(0px, 0px); transition: transform 30s linear;";
-});
+    "transform: translate(0px, 0px); transition: transform 50s linear;";
+}
+
+setInterval(circleMove, 10000);
+
+circle.addEventListener("mouseover", slowCircle);
 
 circle.addEventListener("mouseout", circleMove);
 
@@ -23,8 +25,9 @@ circleMove();
 
 let prevScrollpos = window.scrollY;
 
-function scrollHeader() {
+function handleScroll() {
   const currentScrollPos = window.scrollY;
+
   const header = document.querySelector("header");
 
   if (window.innerWidth < 500) {
@@ -39,15 +42,11 @@ function scrollHeader() {
   }
 
   if (prevScrollpos <= currentScrollPos || currentScrollPos < 100) {
-    header.style.top = "-3rem";
+    header.style.transform = "translateY(0)";
   } else {
-    header.style.top = "0";
+    header.style.transform = "translateY(3rem)";
   }
-  prevScrollpos = currentScrollPos;
-}
 
-function scrollArrow() {
-  const currentScrollPos = window.scrollY;
   const arrow = document.querySelector(".down-arrow");
 
   if (currentScrollPos > 100) {
@@ -55,35 +54,26 @@ function scrollArrow() {
   } else {
     arrow.classList.remove("hide");
   }
-  prevScrollpos = currentScrollPos;
-}
 
-function scrollProgress() {
-  const currentScrollPos = window.scrollY;
   const progress = document.querySelector(".progress-container");
+
   if (currentScrollPos < 300) {
     progress.classList.add("hide");
   } else {
     progress.classList.remove("hide");
   }
-  prevScrollpos = currentScrollPos;
-}
 
-window.addEventListener("scroll", scrollHeader);
-window.addEventListener("scroll", scrollArrow);
-window.addEventListener("scroll", scrollProgress);
-
-function progressbar() {
-  const winScroll =
-    document.body.scrollTop || document.documentElement.scrollTop;
   const height =
     document.documentElement.scrollHeight -
     document.documentElement.clientHeight;
-  const scrolled = (winScroll / height) * 100;
-  document.getElementById("myBar").style.height = scrolled + "%";
+  const scrolled = (currentScrollPos / height) * 100;
+  const scrollBar = document.getElementById("scroll-bar");
+  scrollBar.style.height = scrolled + "%";
+
+  prevScrollpos = currentScrollPos;
 }
 
-window.addEventListener("scroll", progressbar);
+window.addEventListener("scroll", handleScroll);
 
 function switchTheme() {
   const root = document.documentElement;
@@ -96,8 +86,6 @@ const button = document.querySelector("button");
 
 button.addEventListener("click", switchTheme);
 
-const davePic = document.querySelector(".about-container img");
-
 let currentImage = 0;
 
 function displayPicture() {
@@ -109,11 +97,7 @@ function displayPicture() {
 
 function slideRight() {
   displayPicture();
-  if (currentImage !== 2) {
-    currentImage += 1;
-  } else if (currentImage === 2) {
-    currentImage = 0;
-  }
+  currentImage === 2 ? (currentImage = 0) : currentImage++;
   displayPicture();
 }
 
