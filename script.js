@@ -1,9 +1,15 @@
 const circle = document.querySelector(".circle");
 
 function circleMove() {
-  translateX =
-    Math.floor((Math.random() * window.innerWidth) / 5) -
-    window.innerWidth / 10;
+  if (window.innerWidth < 400) {
+    translateX =
+      Math.floor((Math.random() * window.innerWidth) / 10) -
+      window.innerWidth / 20;
+  } else {
+    translateX =
+      Math.floor((Math.random() * window.innerWidth) / 5) -
+      window.innerWidth / 10;
+  }
   translateY =
     Math.floor((Math.random() * window.innerHeight) / 5) -
     window.innerHeight / 10;
