@@ -278,6 +278,11 @@ header>ul {
   padding: 2rem;
 }
 
+
+.projects {
+  padding-bottom: 5rem;
+}
+
 .about-container, .project-container {
   display: grid;
   align-items: center;
@@ -296,6 +301,7 @@ header>ul {
 .images-div {
   width: 100%;
   aspect-ratio: 1;
+  position: relative;
 }
 
 .about-text p {
@@ -304,11 +310,6 @@ header>ul {
 
 img {
   border-radius: 10px;
-}
-
-.images-div {
-  position: relative;
-  width: 80%;
 }
 
 .images-div img {
@@ -355,6 +356,34 @@ svg {
 
 .order-reverse {
   order: 2;
+}
+
+.links {
+  display: flex;
+  gap: 2rem;
+}
+
+.links a {
+  background-color: var(--secondary);
+  padding: 1rem;
+  border-radius: 10px;
+  transition: background-color 0.3s;
+}
+
+.links a:hover, li a:hover {
+  background-color: var(--accent);
+  color: var(--background);
+}
+
+li a {
+  background-color: var(--secondary);
+  padding: 0.5rem;
+  margin: 1rem;
+  border-radius: 10px;
+}
+
+.project-description p {
+  padding: 1rem 0;
 }
 
 @media (max-width: 800px) {
