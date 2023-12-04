@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Fragment Mono:700|Fragment Mono:400');
+@import url('https://fonts.googleapis.com/css?family=Fragment Mono:700|Fragment Mono:400&display=swap');
 
 @media (prefers-color-scheme: light) {
   :root {
@@ -254,6 +254,15 @@ nav a {
   left: calc(50vw - 1.5rem);
   transition: opacity 0.5s;
   cursor: pointer;
+  z-index: -1;
+}
+
+.down-arrow-link {
+  position: absolute;
+  top: calc(100vh - 6.9rem);
+  left: calc(50vw - 2.2rem);
+  width: 5rem;
+  height: 5rem;
 }
 
 .down-arrow:after {
@@ -293,6 +302,10 @@ nav a {
   align-items: center;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 2rem;
+}
+
+.about-me-title, .projects-title {
+  font-size: 2.369rem;
 }
 
 .images-div {
@@ -358,6 +371,10 @@ footer {
 
 .hide {
   opacity: 0 !important;
+}
+
+.visibility-hidden {
+  visibility: hidden;
 }
 
 .order-reverse {
