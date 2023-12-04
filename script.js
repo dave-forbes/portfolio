@@ -34,12 +34,12 @@ let prevScrollpos = window.scrollY;
 function handleScroll() {
   const currentScrollPos = window.scrollY;
 
-  const header = document.querySelector("header");
+  const nav = document.querySelector("nav");
 
   if (prevScrollpos <= currentScrollPos || currentScrollPos < 100) {
-    header.style.transform = "translateY(0)";
+    nav.style.transform = "translateY(0)";
   } else {
-    header.style.transform = "translateY(3rem)";
+    nav.style.transform = "translateY(3rem)";
   }
 
   const arrow = document.querySelector(".down-arrow");
@@ -83,7 +83,8 @@ function getCurrentTheme() {
 }
 
 function toggleNavForPhones() {
-  const header = document.querySelector("header");
+  const nav = document.querySelector("nav");
+  console.log(nav);
 
   if (window.innerWidth < 500) {
     const svg = `<svg fill="#000000" height="800px" width="800px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
@@ -92,15 +93,15 @@ function toggleNavForPhones() {
    l-149.996,150c-5.858,5.858-5.858,15.355,0,21.213c5.857,5.857,15.355,5.858,21.213,0l139.39-139.393l139.397,139.393
    C307.322,253.536,311.161,255,315,255c3.839,0,7.678-1.464,10.607-4.394C331.464,244.748,331.464,235.251,325.606,229.393z"/>
  </svg>`;
-    header.innerHTML = `<p><a href="#hero">${svg} Back to top</a></p>`;
-    header.style.textAlign = "center";
+    nav.innerHTML = `<p><a href="#hero">${svg} Back to top</a></p>`;
+    nav.style.textAlign = "center";
   } else {
-    header.innerHTML = `<ul>
+    nav.innerHTML = `<ul>
     <li><a href="#hero">Dave Forbes</a></li>
     <li><a href="#about">About</a></li>
     <li><a href="#projects">Projects</a></li>
   </ul>`;
-    header.style.textAlign = "left";
+    nav.style.textAlign = "left";
   }
 }
 
