@@ -239,7 +239,7 @@ header>ul {
 .down-arrow {
   position: absolute;
   top: calc(100vh - 8rem);
-  left: 50vw;
+  left: calc(50vw - 1.5rem);
   width: 0;
   height: 30px;
   border-radius: 2px;
@@ -363,14 +363,14 @@ svg {
   gap: 2rem;
 }
 
-.links a {
+.link a {
   background-color: var(--secondary);
   padding: 1rem;
   border-radius: 10px;
   transition: background-color 0.3s;
 }
 
-.links a:hover, li a:hover {
+.link a:hover, li a:hover {
   background-color: var(--accent);
   color: var(--background);
 }
@@ -406,8 +406,8 @@ li a {
 @media (max-width: 600px) {
 
   .hero {
-    min-height: 100vh;
-    min-height: 100svh;
+    /* min-height: 100vh; */
+    min-height: 100dvh;
   }
 
   .circle {
@@ -432,6 +432,7 @@ li a {
 
   .down-arrow {
     top: calc(100vh - 5rem);
+    left: calc(50vw - 1rem);
   }
 
   .down-arrow::after {
