@@ -82,7 +82,7 @@ function getCurrentTheme() {
   }
 }
 
-function removeNavForPhones() {
+function toggleNavForPhones() {
   const header = document.querySelector("header");
 
   if (window.innerWidth < 500) {
@@ -94,11 +94,19 @@ function removeNavForPhones() {
  </svg>`;
     header.innerHTML = `<p><a href="#hero">${svg} Back to top</a></p>`;
     header.style.textAlign = "center";
+  } else {
+    header.innerHTML = `<ul>
+    <li><a href="#hero">Dave Forbes</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#projects">Projects</a></li>
+  </ul>`;
+    header.style.textAlign = "left";
   }
 }
 
 window.addEventListener("load", getCurrentTheme);
-window.addEventListener("load", removeNavForPhones);
+window.addEventListener("load", toggleNavForPhones);
+window.addEventListener("resize", toggleNavForPhones);
 
 function switchTheme() {
   const root = document.documentElement;
