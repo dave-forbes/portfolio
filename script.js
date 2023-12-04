@@ -38,8 +38,10 @@ function handleScroll() {
 
   if (prevScrollpos <= currentScrollPos || currentScrollPos < 100) {
     nav.style.transform = "translateY(0)";
+    nav.classList.toggle("visibility-hidden");
   } else {
     nav.style.transform = "translateY(3rem)";
+    nav.classList.toggle("visibility-hidden");
   }
 
   const arrow = document.querySelector(".down-arrow");
@@ -84,7 +86,6 @@ function getCurrentTheme() {
 
 function toggleNavForPhones() {
   const nav = document.querySelector("nav");
-  console.log(nav);
 
   if (window.innerWidth < 500) {
     const svg = `<svg fill="#000000" height="800px" width="800px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
