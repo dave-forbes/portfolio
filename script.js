@@ -38,10 +38,10 @@ function handleScroll() {
 
   if (prevScrollpos <= currentScrollPos || currentScrollPos < 100) {
     nav.style.transform = "translateY(0)";
-    nav.classList.toggle("visibility-hidden");
+    nav.classList.add("visibility-hidden");
   } else {
     nav.style.transform = "translateY(3rem)";
-    nav.classList.toggle("visibility-hidden");
+    nav.classList.remove("visibility-hidden");
   }
 
   const arrow = document.querySelector(".down-arrow");
