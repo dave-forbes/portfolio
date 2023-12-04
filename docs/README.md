@@ -20,6 +20,7 @@ Features
 - Internal links with smooth scrolling for easy site navigation.
 - Responsive design to make page easily viewable for all devices.
 - Clean and clear UI with suitable contrast for a11y guidelines.
+- Auto sliding image gallery.
 - Clear and effective tab order for users using only keyboard.
 - Smooth transitions on all elements.
 - Scroll progress bar to aid navigation.
